@@ -1,17 +1,43 @@
 * {
   box-sizing: border-box;
 }
+html {
+  -ms-text-size-adjustt: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 0.75em;
+  line-height: 1.33333;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: #000;
+  font-family: 'Verdana,Arial,sans-serif';
+  @media print, screen and (min-width: 960px) {
+    font-size: 0.75em;
+  }
+  @media print, screen and (min-width: 581px) {
+    font-size: 1em;
+  }
+}
 html,
 body {
-  min-height: 100%;
-  background: #000;
-  color: #fff;
+  @media print, screen and (min-width: 581px) {
+    height: auto;
+  }
 }
-/* sets the body height of the browser, so that backgrounds and div heights work correctly. Color and background will almost certainly be altered; they are just placeholders */
+body,
+figure {
+  margin: 0;
+}
 
 body {
-  font-size: 1.4rem;
-  text-rendering: optimizeLegibility;
+  background: #000;
+  font-size: 1em;
+
+  @media print, screen and (min-width: 960px) {
+    font-size: 0.75em;
+  }
+  @media print, screen and (min-width: 581px) {
+    font-size: 1em;
+  }
 }
 /* sets the base font size for the document; turns on kerning pairs and ligatures */
 
@@ -33,7 +59,12 @@ video {
 }
 
 /* ensures that older browsers will display HTML5 elements correctly */
-
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
 h1 {
   font-size: 1.4rem;
 }
@@ -90,6 +121,14 @@ input:required:after {
 /* sets up required form fields with the conventional following red asterix */
 input[type='email']:invalid {
   background: #f00;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  -webkit-appearance: button;
+  cursor: pointer;
 }
 /* causes a visual alert in browsers that do client-side checking of HTML5 email field – this may already be the default in some browsers. */
 
